@@ -1,0 +1,22 @@
+services:
+  mqtt:
+    image: eclipse-mosquitto:latest
+    ports:
+      - "1883:1883"
+    networks:
+      - mqtt_network
+    volumes:
+      - ./mosquitto.conf:/mosquitto/config/mosquitto.conf:ro      
+
+  woodshop_mqtt:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - mqtt_network
+    depends_on:
+        - mqtt      
+
+networks:
+  mqtt_network:
+    driver: bridge

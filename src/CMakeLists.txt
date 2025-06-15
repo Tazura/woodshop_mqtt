@@ -5,8 +5,6 @@ project(woodshop_mqtt VERSION 1.0)
 
 include(GNUInstallDirs)
 
-
-
 find_package(Boost REQUIRED COMPONENTS system filesystem program_options)
 
 SET(CONFIG_FILENAME "${CMAKE_PROJECT_NAME}.conf")

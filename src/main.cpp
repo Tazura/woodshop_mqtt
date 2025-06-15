@@ -385,6 +385,8 @@ int main(int argc, const char **argv)
 	}
 	else
 	{
+		fprintf(stderr, "Connected to MQTT broker\n");
+
 		// fprintf(stderr, "%s:%d\n", __FILE__, __LINE__);
 		app.Run();
 		// fprintf(stderr, "%s:%d\n", __FILE__, __LINE__);
