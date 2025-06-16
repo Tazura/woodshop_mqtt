@@ -6,7 +6,8 @@ services:
     networks:
       - mqtt_network
     volumes:
-      - ./mosquitto.conf:/mosquitto/config/mosquitto.conf:ro      
+      - ./mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
+    restart: unless-stopped
 
   woodshop_mqtt:
     build:
@@ -15,7 +16,8 @@ services:
     networks:
       - mqtt_network
     depends_on:
-        - mqtt      
+        - mqtt
+    restart: unless-stopped
 
 networks:
   mqtt_network:
